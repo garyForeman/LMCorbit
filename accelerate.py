@@ -10,7 +10,10 @@ import numpy as np
 from constants import *
 
 def accelLMC(xLMC, vLMC, xSMC):
-    """Returns the sum of the acceleration components acting on the LMC. These components are the gravitational field of the Milky Way, dynamical friction of the Milky Way, and the graviational field of the SMC. Returns a numpy array of len(xLMC)."""
+    """Returns the sum of the acceleration components acting on the LMC. These 
+    components are the gravitational field of the Milky Way, dynamical friction 
+    of the Milky Way, and the graviational field of the SMC. Returns a numpy 
+    array of len(xLMC)."""
     distMW = np.linalg.norm(xLMC)
     velTot = np.linalg.norm(vLMC)
     distSMC = np.linalg.norm(xLMC - xSMC)
@@ -23,7 +26,10 @@ def accelLMC(xLMC, vLMC, xSMC):
     return aMWGrav + aMWFric + aSMCGrav
 
 def accelSMC(xSMC, vSMC, xLMC, vLMC):
-    """Returns the sum of the acceleration components acting on the LMC. These components are the gravitational field of the Milky Way, dynamical friction of the Milky Way, the gravitational field of the LMC, and if close enough, dynamical friction of the LMC. Returns a numpy array of len(xSMC)."""
+    """Returns the sum of the acceleration components acting on the LMC. These 
+    components are the gravitational field of the Milky Way, dynamical friction 
+    of the Milky Way, the gravitational field of the LMC, and if close enough, 
+    dynamical friction of the LMC. Returns a numpy array of len(xSMC)."""
     distMW = np.linalg.norm(xSMC)
     velTot = np.linalg.norm(vSMC)
     distLMC = np.linalg.norm(xSMC - xLMC)
