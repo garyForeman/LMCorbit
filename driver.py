@@ -12,7 +12,8 @@ from constants import *
 from leapfrogKDK import leapfrogKDK
 
 def writeData(filename, time, xLMC, xSMC, aLMC):
-    """Writes data to filename. Filename should be opened for writing before this function call."""
+    """Writes data to filename. Filename should be opened for writing before 
+    this function call."""
     xLMC_KPC = xLMC / CM_PER_KPC
     xSMC_KPC = xSMC / CM_PER_KPC
     filename.write(str(time / S_PER_YR) + " ") 
